@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express(); // server instance create karna 
+app.listen(3000); // server start karna 
+
+now seeing at : http://localhost:3000/ -> Cannot GET /
+why? Ans: abhi tak humne server ko program hi nhi kiya hai ki kuch response de
+app.listen(3000);  -> hum apne os ko batate hai ki humare server ko ye port number do
+node server.js -> ye command server ko start toh kar degi lekin js mein kuch bhi changes karoge toh usko register nhi karega
+nodemon -> jaise jaise javascript ke file mein changes hote jayegi waise aise server restart hojati hai 
+
+git mein node modules aur .env file github pe nhi dalna hai , aur uske liye .gitignore file create karke uske andar in files ka naam likh do 
