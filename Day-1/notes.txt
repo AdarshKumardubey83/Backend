@@ -1,0 +1,60 @@
+❓ “Browser ke bahar” ka matlab kya?
+Simple language me:
+
+👉 Browser ke alawa kahin bhi JavaScript chalana.
+
+Pehle (browser ke andar JS)
+
+JavaScript sirf yahan chalti thi:
+
+Chrome,Edge,Firefox
+
+Example:
+<script>
+  console.log("Hello");
+</script>
+
+
+❌ Ye sirf browser me chalega
+❌ File system, OS, server access nahi
+
+Ab (browser ke bahar JS) → Node.js
+
+Node.js allow karta hai JS chalana:
+
+Terminal / Command Prompt,Laptop / Server,Backend applications
+
+Node ek JavaScript engine hai jo browser ke bahar JS chala sakta hai.
+=====================================================================
+
+
+What are packages
+================= 
+             Packages ek aisa code hai jisse humne nhi likha hai kisi aur developer ne likha hai , lekin usse public kar diya , taki baki developer bhi us code ko access kar sake.
+
+package.json: ye jo javascript ka code hai woh kaun kaun se packages pe depend karta hai , isliye dependencies likha hota hai
+node_modules: jo packages hum install karte hai unka code kahi toh aayega, toh woh code aata hai node_modules folder ke andar
+package-lock.json: tumne jo code likha hai woh kis package pe depend karta hai, aur uske baad woh packages(jispe tumhara code dependent tha), woh kin packags pe dependent hai usko manage karta hai.
+
+What is Server?
+Server ek machine hoti hai jiske pass khud ka os , khud ka processor, khud ka RAM aur khud ka storage hota hai . like our laptops and Mobiles
+then how Server is different from our Laptops and Mobiles: Server ek machine jisse aise program kiya gaya hai ki user jo bhi request karega , uske ek proper response diya ja sake.
+***Server ek machine hai , jisse program kar diya gaya hai ki user jo bhi request karega , usse uska proper response milega 
+
+Backend Server Creation
+========================
+
+starting command : npm init -y(iska matlab ki hum ek Node.js Application start karne wale hai is folder ke andar)
+                   After running this command we get : package.json file , it means ki is folder ke andar aage jake, ek Node.js ki application banegi , ki hum node.js ka code likhenge ,ek node.js ka application create karenge
+                   jo hum server create karenge woh ek node.js application bhi hoti hai aur usko initiate karne ke liye : npm init -y(Node.js application ko start kar rahe hai , initialize kar rahe hai)
+
+Express: ye ek package hai jo bahut easily server create karne deta hai
+======================================================================== 
+
+const express = require('express');
+
+const app=express() //server create kar chuke , aur uska instance create hua hai aur woh store hai app constant ke andar
+
+app.listen(3000) //server ko start karta hai 
+
+
