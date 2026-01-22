@@ -1,0 +1,16 @@
+git bydefault kisi bhi changes ko track nhi kar raha hota hai , Agar aapko git se changes track karwane hai toh aapko us folder ke andar ek command run karni hoti hai that is : git init
+U => Untracked 
+M => Modified
+A => Added / Track
+
+commit => Ek particular point of time tak ke code ko hum bolte hai commit
+Commit karne ke baad agar aap kuch bhi changes nhi karoge toh aapko koi symbol nhi dikhega 
+git diff => kya kya changes hue hai dekhne ke liye
+
+Modified=> last commit ke baad agar aapne kuch bhi changes kiye us code mein , aur jis bhi files mein kiye toh uspe M symbol aayega
+
+1.git init likhne ke baad - symbol U aayega means Untracked
+2.Track karwana hai jis bhi file ko toh -> git add index.html -> isko Karte hi symbol hojayega A means Track hone laga
+3.commit -> commit karte hai ek message title ke saath -> git commit -m "first Commit"
+
+***Ye jo 3 commands hai isse hum apne local systems mein dekhte hai changes , abhi collaboration pe nhi gaye hai 
