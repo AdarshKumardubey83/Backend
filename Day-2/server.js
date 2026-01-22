@@ -2,7 +2,7 @@ const express = require('express');
 const app = express(); // server instance create karna 
 
 app.get('/', (req,res) => {
-    res.send("Shree Harivansh")
+    res.send("Adarsh")
 })
 
 app.get('/about', (req,res) => {
