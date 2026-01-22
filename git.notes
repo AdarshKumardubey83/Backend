@@ -9,8 +9,10 @@ git diff => kya kya changes hue hai dekhne ke liye
 
 Modified=> last commit ke baad agar aapne kuch bhi changes kiye us code mein , aur jis bhi files mein kiye toh uspe M symbol aayega
 
+First time process , matlab jab ekdum new rehti hai file
+==========================================================
 1.git init likhne ke baad - symbol U aayega means Untracked
 2.Track karwana hai jis bhi file ko toh -> git add index.html -> isko Karte hi symbol hojayega A means Track hone laga
 3.commit -> commit karte hai ek message title ke saath -> git commit -m "first Commit"
 
-***Ye jo 3 commands hai isse hum apne local systems mein dekhte hai changes , abhi collaboration pe nhi gaye hai 
+***Ye jo 3 commands hai isse hum apne local systems mein dekhte hai changes , abhi collaboration pe nhi gaye hai .
