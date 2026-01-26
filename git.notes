@@ -16,3 +16,71 @@ First time process , matlab jab ekdum new rehti hai file
 3.commit -> commit karte hai ek message title ke saath -> git commit -m "first Commit"
 
 ***Ye jo 3 commands hai isse hum apne local systems mein dekhte hai changes , abhi collaboration pe nhi gaye hai .
+
+Basic Difference between git and github
+=======================================
+
+Git vs GitHub (simple difference)
+
+Git
+====
+>A version control tool
+>Runs locally on your computer
+>Tracks code changes (history, rollback, branches)
+>Works offline
+>Created by Linus Torvalds
+
+GitHub
+======
+>A cloud platform/service
+>Hosts Git repositories online
+>Used for sharing, collaboration, backup
+>Needs internet
+>Owned by Microsoft
+
+Jab hum code ko apne system se pahuchate hai github pe usko kehte hai push karna
+Ab github pe project pahuchane ke liye github pe repository create karte hai aur repository create karne ke baad uski location set karega: git remote add origin https://.... ,aur git push, github pe pahucha deta hai  
+
+collaboration: 
+=============
+jab sabse pehli baar kisi aur ka code lana hota hai: git clone https://(repo link)
+
+**Commit sirf local system mein hota hai , git push karenge tab changes local system se github pe chale jate hai
+
+git log --oneline : is command se hum dekh sakte hai ki abhi tak kitna commit hai humare system mein
+
+ab kisi user ne apne system se code change karke push kar diya github pe , woh changes abhi humare pe nhi aaye , aur clone command sirf ek baar use hota hai . ab pull karenge git pull:
+git pull karte hi changed code humare laptop pe aajayega
+
+Ab kisi user ko agar add karna hai apne  repo mein taki woh bhi changes kar sake code mein , toh usko as a collaborators add karenge us repo pe tab woh bhi changes kar sakta hai 
+
+git add . => jitni bhi files modify ho rahi hoti hai , un sabko ek baar mein hi add kar deti hai staging area ke andar. 
+
+Diagram to Understand
+========================
+
+┌───────────────────────┐
+│   WORKING DIRECTORY   │
+│ (your files/code)     │    real time mein changes karte hai yaha
+└───────────────────────┘
+            │
+            │  git add .
+            ▼
+┌───────────────────────┐
+│     STAGING AREA      │
+│ (files ready to save) │  jo bhi changes kiye ho usse review karne ke kaam aata hai
+└───────────────────────┘
+            │
+            │  git commit
+            ▼
+┌───────────────────────┐
+│    Commit Area        │  
+│                       │ jo bhi changes kiye ho final hai
+└───────────────────────┘
+            │
+            │  git push
+            ▼
+┌───────────────────────┐
+│    REMOTE REPOSITORY  │
+│       (GitHub)        │
+└───────────────────────┘
