@@ -1,0 +1,30 @@
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000")
+}) -->jaise hi aapne server ko start kiya , aur aapka server user ka request sunne ke liye ready hai, usi time pe ye callback execute hojata hai
+
+API : Two Application or two Software program , if they are communicating with each other and sharing data with each other , toh ye kaam API ke through hosakta hai.
+      Inme kuch rules hote hai aur protocols hote hai.
+
+REST API ke 2 main rules:
+1)Agar frontend aur backend dono ko communicate karna hai , jo protocol use kiya jayega woh ya toh HTTP rahega ya HTTPS      
+2)Aap communication kis tarike ka kar rahe ho , uske bais pe method decide hoga 
+
+Methods
+=======
+1) GET: iska use hum tab karte hai jab hume server se kuch data mangwana ho {jab user(frontend) ko server se kuch data mangwana hai}
+2) POST: Jab server pe hume kuch data create karna ho{jab server side pe kuch create karwana ho , frontend to backend , Ex: user ko account create karna hai , user ko insta pe photo post karna hai }
+3) PUT: Jab server pe koi resource already hai , aur resource ko pura update karna hai.
+4) PATCH: jab resource server pe already hai lekin uska chota sa part hume update karna hai
+5) DELETE: jab server pe koi resoure hai already , aur usse completely delete karna hai 
+
+JSON : Frontend aur Backend API ke through communicate karte hai , ye json format mein karte hai 
+
+req : frontend se jo bhi data aa raha hai , usko hum req ke help se access karenge 
+res : Server se agar aapko kuch response ya data bhejna hai , uske liye res ka use karna padta hai
+
+/notes route pe postman(frontend) se data bhej raha hai , jisko hum access kar rahe hai req.body ke through => post request ke through
+
+Overall : humne 2 API create kiya hai same naam se lekin dono ka method alag hai , ek get hai aur ek post hai , 
+/notes route pe frontend(Postman) se data aa raha hai , aur hum post request ke through server side pe notes create kar rahe hai
+/notes , method get -> user ispe jaise hi request karega woh saare notes response mein send hojayega
