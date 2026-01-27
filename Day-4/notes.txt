@@ -1,0 +1,33 @@
+Folder structure acche se aana chahiye to be good developer:
+src ke andar app.js -> is file ke mainly 2 kaam rehte hai : 1) Server create karna aur 2) Server ko config karna
+
+root folder ke andar : server.js file ka main kaam hota hai: server ko start karna 
+
+We can create our custom commands in package.json using scripts tag
+===================================================================
+
+"scripts": {
+    "dev": "npx nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+Ab dev likhne ke baad server chalu hojayega   : npm run dev(wahi jo command hai woh run hogi npx nodemon server.js)
+
+Jo humara Express ka server hai woh bydefault , req.body ka data read nhi kar sakta 
+Aur hum chahte hai ki read kare toh uske liye ek middleware create karenge : app.use(express.json()) , express.json() middleware hai , aur usko use karne ka tarika hai app.use(express.json())
+
+app.delete("/notes/:index") => ye :(colon) ka matlab hai ki dynamic part hai ye , notes mein jis bhi index ko delete karna hai woh, Client bhejega is dynamic part pe , like: /notes/3 
+                               jis bhi note ko woh delete karna chahta hai us note ka index , / ke baad bhej raha hoga 
+aur is dynamic value ko access karne ke liye req.params use karte hai
+
+req.params ek object hai: [Object: null prototype] { index: '10' } aur index lene ke liye => req.params.index, kyuki params ek object hai aur index uski property
+
+Use of req.body and req.params
+==============================
+
+req.body => jab data thoda sa jada rehta hai aur complex rehta hai 
+
+req.params => jab single value rehti hai, jab single data rehta hai, bina colon ke req.params kaam nhi karta , toh agar req.params use karna hai toh colon lagana padega
+
+
+
