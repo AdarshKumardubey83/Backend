@@ -1,0 +1,14 @@
+HTTP Status Codes: client ne agar kuch request ki hai toh us request ka outcome kya hai : kya woh request sahi gayi thi , us request mein koi problem toh nhi tha .
+                   jo bhi outcome hoga client ke request ka , uske according hum status code bhej dete hai.
+
+jo status code 204 hai iske saath ek issue hai , jo postmanhai woh data nhi dikhayega
+
+rs: command to restart server
+
+Database: agar server restart hogaya willingly or not willingly , toh client ka pura data chala jata hai, kyuki RAM mein store rehta hai aur RAM humeshra Random memory allocate karta hai
+=========
+Is problem ko solve karta hai Database. Ab server kitni baar bhi restart ho. data -> Database ke paas rehta hai
+
+
+
+
