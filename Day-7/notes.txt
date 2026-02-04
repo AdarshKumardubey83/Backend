@@ -1,0 +1,30 @@
+2 Layers of security ko hum follow karte hai apni Database ki Security ke liye: kaun sa IP access kar sakta hai aur Database Users(Different Users have Different permissions )
+
+ShreeHarivansh  Ez4cQdZpT1mjxZXx
+mongodb+srv://ShreeHarivansh:Ez4cQdZpT1mjxZXx@cluster0.dcejcts.mongodb.net/
+
+ye uri humare cluster tak ki hai : mongoose.connect("mongodb+srv://ShreeHarivansh:Ez4cQdZpT1mjxZXx@cluster0.dcejcts.mongodb.net/") / ke baad database ka naam batao, if database is present then it will connect , if database is not present then it will create database and then it will connect to db
+
+Folder Structure:
+================
+
+src ke andar config folder ke andar database.js ke andar: database ko connect karne ka code rahega
+
+Schema Creation: Jobhi data store karna hai us data ka type kya hai, fomrat kya hai , property kya hai . This process is schema create karna
+Schema: Hum apne Database ko bata rahe hote hai ki kis format mein data ko store karwayenge
+
+Database mein hume kuch bhi operation agar karna hai like create , read . Toh uske liye jarurat hoti hai model ki
+
+const noteModel = mongoose.model("notes", noteSchema) ---> Bahut saare data jab same type ka hota hai toh usse ek collection mein rakha jata hai, Us collection ka naam hai notes , aur multiple connections bhi rahenge 
+Aur is notes ke collection ke andar hum note ka saara data rakhenge , ye is line mein bata rahe hote hai
+
+Aur take care bina Model ke ek bhi operation perform nhi hoga
+
+
+_id:ObjectId('6982bfd8ed4b79ed790478d2')  ---> Database khud har ek note ko unique id deta hai taki uniquely identify kar paye . Id will always be unqiue , No two same Id for two note
+title:"test title 2"
+description:"test description 2"
+__v: 0
+
+Schema ke andar jo jo property mentioned hai sirf wahi db mein create hoga , agar aap uske alawa kuch frontend se bhejoge aur server ke logic mein bhi change karoge tabhi kuch nhi hoga . Woh new property jo mentioned nhi hai schema mein woh ignore hojayegi.
+
