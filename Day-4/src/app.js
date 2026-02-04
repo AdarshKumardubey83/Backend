@@ -29,7 +29,6 @@ app.get("/notes", (req,res) => {
 
 app.delete("/notes/:index", (req,res) => {
     delete notes[ req.params.index ]
-    
     res.send("note deleted successfully")
 })
 

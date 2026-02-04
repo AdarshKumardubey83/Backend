@@ -39,7 +39,7 @@ package-lock.json: tumne jo code likha hai woh kis package pe depend karta hai, 
 What is Server?
 Server ek machine hoti hai jiske pass khud ka os , khud ka processor, khud ka RAM aur khud ka storage hota hai . like our laptops and Mobiles
 then how Server is different from our Laptops and Mobiles: Server ek machine jisse aise program kiya gaya hai ki user jo bhi request karega , uske ek proper response diya ja sake.
-***Server ek machine hai , jisse program kar diya gaya hai ki user jo bhi request karega , usse uska proper response milega 
+***Server ek machine hai , jisse program kar diya gaya hai ki user jo bhi request karega , usse uska proper response milega. 
 
 Backend Server Creation
 ========================

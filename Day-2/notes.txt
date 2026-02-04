@@ -8,4 +8,4 @@ app.listen(3000);  -> hum apne os ko batate hai ki humare server ko ye port numb
 node server.js -> ye command server ko start toh kar degi lekin js mein kuch bhi changes karoge toh usko register nhi karega
 nodemon -> jaise jaise javascript ke file mein changes hote jayegi waise aise server restart hojati hai 
 
-git mein node modules aur .env file github pe nhi dalna hai , aur uske liye .gitignore file create karke uske andar in files ka naam likh do 
+git mein node modules aur .env file github pe nhi dalna hai , aur uske liye .gitignore file create karke uske andar in files ka naam likh do. 

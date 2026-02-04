@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.json()) //is line ke bina hum req.body ka data nhi padh sakte
+app.use(express.json()) //jo humara serve hota hai bydefault serve ke data ko nhi padh sakta , isliye ye  line hum likhte hai taki ke  req.body ka data padh sake
 
 const notes = []
 
@@ -11,6 +11,7 @@ app.post("/notes",(req,res)=>{
     notes.push(req.body)
     res.send("Shree Harivansh,note created");
 })
+
 
 app.get("/notes",(req,res)=>{                    //API Ka naam same hai lekin method alag hai 
     res.send(notes)
