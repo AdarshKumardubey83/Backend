@@ -1,0 +1,27 @@
+React mein API call karne ke liye: we use axios package, command for installation:npm i axios
+CORS Policy: Frontend run hota hai :5173 pe aur backend run hota hai :3000 pe, toh ye jo port ka Difference hai browser in dono ko alag alag website treat karta hai aur CORS policy ek website pe rehte hue dusre website pe request nhi karne deti
+
+Hum production mein sirf humari website se traffic allow karenge baki kisi aur website se allow nhi karte hai
+But development mein hum cors ka use karenge : npm i cors
+const cors = require('cors');
+app.use(cors())
+Ab jo humara server hai woh cross origin wali jo request hai, unhe accept karna chalu karne lagta hai
+
+function App() {
+  
+  const [notes, setnotes] = useState([])
+
+  console.log("Hello Integration");
+
+  axios.get('http://localhost:3000/api/notes')   //ye line kya karegi jo aapka backend ka server hai , us backend ke server pe ye /api/notes api pe hit karegi jiska method hai get , aur woh jo bhi api data return karegi, woh data aayega res.data ke
+  .then((res)=>{
+    setnotes(res.data.notes)
+  })
+abhi ye log baar baar continuously ho raha hai isliye kyuki ye jo App Component hai ye baar baar rerender ho raha hai.
+Hum jaise hi state variable ko change karte hai, jis component ke andar state variable banaya tha , woh component rerender hota hai. Isliye App rerender ho raha hai
+Iska solution hota hai UseEffect.
+
+UseEffect ye karta hai ki bas ek baar : ek baar api call honi chahiye aur ek baar state change honi chahiye.
+
+Humne Frontend pe ek command run ki : npm run build : is command ne hume react ka output hume 3 files mein di : html , css aur js . jiske andar react ke pure code ka output tha . Aur in tino files ko humne move kar diya Backend ke public folder ke andar.
+

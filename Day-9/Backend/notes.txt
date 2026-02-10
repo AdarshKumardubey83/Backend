@@ -1,0 +1,12 @@
+
+app.use('*name', (req,res)=>{
+    res.sendFile(path.join(__dirname, "..", "/public/index.html"))    
+})
+
+__dirname ye kya karta hai ki jis bhi file ke andar hum hai us folder tak ka path deti hai. Toh src tak ka pura path mil gaya , lekin hume path dena hai index.html ka isliye bahar aayenge src se uske baad aage ka path denge 
+
+app.use(express.static("./public")) : is middleware ke vajah se humara backend , frontend bhi dikhana chalu kar diya kyuki browser jab request kar raha tha backend ke index.html ke api pe toh , woh api humne create hi nhi ki thi , toh humne server ko program kiya tha ki agar aisi koi bhi request ki hai toh wild card ke through index.html send kar dena 
+                                      toh wahi pe bas ye ab css file aur js file response mein mile
+
+
+Toh humne integrate kar diya hai frontend aur backend ko ek hi url pe 

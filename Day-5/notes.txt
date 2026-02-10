@@ -10,5 +10,5 @@ Database: agar server restart hogaya willingly or not willingly , toh client ka 
 Is problem ko solve karta hai Database. Ab server kitni baar bhi restart ho. data -> Database ke paas rehta hai
 
 
-
+Compass ka role: jo bhi data tumhara database pe store hai, usse dekhne mein kaam aayega Compass
 

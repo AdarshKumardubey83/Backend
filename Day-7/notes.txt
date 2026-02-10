@@ -28,3 +28,8 @@ __v: 0
 
 Schema ke andar jo jo property mentioned hai sirf wahi db mein create hoga , agar aap uske alawa kuch frontend se bhejoge aur server ke logic mein bhi change karoge tabhi kuch nhi hoga . Woh new property jo mentioned nhi hai schema mein woh ignore hojayegi.
 
+github pe mongo ka uri nhi dalte hai warna humara database koi bhi access kar sakta hai : isliye .env file banayenge aur uske andar MONGO_URI dalenge , aur jaha pe uri use karna hai uske liye
+ek package install karenge that is : npm i dotenv , phir isko require karke access karte hai hum apne URI ko
+
+noteModel.find(): ye find method jitnebhi notes rahenge humare database mein unko read karegi aur read karne ke baad return karti hai.
+                  Find method humesha array mein data return karegi , Array of Objects  
