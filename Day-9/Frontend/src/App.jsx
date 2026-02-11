@@ -26,7 +26,7 @@ function App() {
     const{title,description} = e.target.elements;
     console.log(title.value,description.value)
 
-    axios.post("https://backend-2-j3mz.onrender.com/api/notes",{
+    axios.post("https://backend-2-j3mz.onrender.com/api/notes/",{
       title: title.value,                         //-> Ab ye data req.body mein jayega
       description: description.value               
     })
