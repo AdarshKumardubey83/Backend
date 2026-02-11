@@ -9,7 +9,7 @@ function App() {
   console.log("Hello Integration");
 
   function fetchNotes() {
-    axios.get('http://localhost:3000/api/notes')   
+    axios.get('https://backend-2-j3mz.onrender.com/api/notes')   
     .then((res)=>{
       setnotes(res.data.notes)
     })
@@ -26,7 +26,7 @@ function App() {
     const{title,description} = e.target.elements;
     console.log(title.value,description.value)
 
-    axios.post("http://localhost:3000/api/notes",{
+    axios.post("https://backend-2-j3mz.onrender.com/api/notes",{
       title: title.value,                         //-> Ab ye data req.body mein jayega
       description: description.value               
     })
@@ -37,7 +37,7 @@ function App() {
   }
 
   function handleDeleteNote(noteId){
-    axios.delete("http://localhost:3000/api/notes/"+noteId)
+    axios.delete("https://backend-2-j3mz.onrender.com/api/notes/"+noteId)
     .then(res=>{
       console.log(res.data)
       fetchNotes()

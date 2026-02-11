@@ -10,3 +10,15 @@ app.use(express.static("./public")) : is middleware ke vajah se humara backend ,
 
 
 Toh humne integrate kar diya hai frontend aur backend ko ek hi url pe 
+
+
+Day-95(Deployment) Notes
+=========================
+Humare pass ek frontend ka folder hai aur ek backend ka folder hai, aur agar hum isse aise hi deploy kare . Backend ka folder render pe aur frontend ka folder vercel pe.
+Problem : Abhi nhi lag raha hai kyuki free mein mil raha hai but jab actual mein work karte hai tab load jata hota hai , tab free plan wala sirf vercel ka 50 user serve kar sakta hai aur backend ka render wala sirf 10 user serve kar sakta hai
+Alag alag pricing lagegi dono pe deploy karne mein , isliye ek pe karenge.
+
+steps ek pe karne ke liye:
+1) Frontend pe ek command run karenge npm run build -> milega dist file, aur ye command jo bhi frontend pe humne react ka logic likha hai , us pure logic ko  lejati hai dist folder ke andar.(Inside dist 3 files : html , css , js)
+Toh jo kaam frontend kar sakta tha ab woh kaam dist folder kar sakta hai toh , we will deploy on render : Backend+dist
+
