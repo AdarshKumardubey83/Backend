@@ -1,0 +1,17 @@
+notes: app.js ke andar hum agar saari api create karenge , toh app.js bahut jada kharab dikhna chalu hojati hai
+isliye ek routes naam ka folder banayenge aur uske baad uske andar ek file banayenge -> auth.routes.js
+jitni bhi Authentication wali api rahegi , un sabhi ka code is particular file ke andar rahega -> auth.routes.js ke andar 
+
+app.js file ke alawa agar kahi aur file mein api create karni hai toh uske liye aapko Router ka use karna padta hai
+
+Token create karne ke liye: ek package ki jarurat padti hai -> jsonwebtoken
+
+Har ek application ka ek unique JWT_SECRET hota hai
+
+Cookies storage ka pura access server ke pass rahega aur server usme kuch bhi likh sakta hai, aur usme kuch bhi padh sakta hai
+
+jabhi token create hoga , is token ko hum set kar denge ek cookies ke andar client side pe , aur iske liye hume ek aur package ki jarurat hogi : cookie-parser
+
+q) Hum cookies ke andar aakhir token ko rakh hi kyu rahe hai , aakhir iski jarurat kyu padi?
+Ans: Agar cookies-storage ke andar token rehta hai , toh client kuch bhi request karega server pe , toh server sidha cookies-storage mein se token nikalke padh leta hai, toh hume baar baar manual code nhi likhna padta hai ki server kaise token nikalega.
+Server waha khud hi cookies-storage se token padh leta hai, kyuki baki storage ka access server ke pass nhi rehta hai

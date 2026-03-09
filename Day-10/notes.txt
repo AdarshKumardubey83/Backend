@@ -1,0 +1,16 @@
+Authentication => Identify karna ki request kis user ke pass se aayi hai.
+
+Authorization => Ek user kya kya kar sakta hai , alag alag type ke users hote hai aur alag alag permissions aur restrictions hote hai
+
+Validation => data ka format check karna ki woh proper format mein hai ya nhi
+
+Verification => data sahi hai ya nhi
+
+User sabse pehle register ki request karta hai server pe , aur is request mein user ki detail rehti hai, aur ye request jayegi server pe aur server sabse pehle save karega is data ko database ke andar, aur ek token create karega
+Token create karta hai user ke data ke saath,  server de deta hai is token ko user ko response mein. Ab ek baar user ne register kar liya, uske baad aap koi bhi request bhejoge server pe toh us request mein ye token hona chahiye .
+Ek baar token create hone ke baad ab jab bhi user request karega toh woh token saath mein jayega , it is rule .
+
+School ke ID card pe jaise stamp rehta hai  , waise hi server token pe signature karta hai : signature with a secret name JWT_SECRET(ye secret ek string hoti hai uske andar kuch keywords likhe hote hai)
+
+jaise id card koi bhi nakli bana sakta hai lekin stamp unique hoga , waise hi token bhi koi bhi bana sakta hai lekin uspe, signature JWT_SECRET server karega unique
+
