@@ -1,0 +1,1 @@
+Cookies Storage : iske andar jo bhi data hoga , usko server access kar sakta hai, with the help of req.cookies
