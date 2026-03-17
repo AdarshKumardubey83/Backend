@@ -2,6 +2,7 @@ const express = require('express')
 const userModel = require("../models/user.model");
 const jwt = require('jsonwebtoken')
 const authRouter = express.Router()
+const crypto = require('crypto')
 
 authRouter.post("/register", async (req,res) => {
     const { email,name,password } = req.body;
@@ -14,8 +15,10 @@ authRouter.post("/register", async (req,res) => {
         })
     }
 
+    const hash = crypto.createHash("md5").update(password).digest("hex")
+
     const user = await userModel.create({
-        email, password , name
+        email, password: hash , name
     })
 
     const token = jwt.sign(
@@ -34,14 +37,61 @@ authRouter.post("/register", async (req,res) => {
     })
 })
 
+/**
+ * 
+ * /api/auth/protected
+ */
 authRouter.post("/protected", (req,res)=>{
-    console.log(req.cookies);
+    console.log(req.cookies);    //--> client side pe jo cookies store hai usko access karne  ke liye
 
     res.status(200).json({
         message: "This is a protected route"
     })
 })
 
+/**
+ * POST /api/auth/login
+ * 
+ */
+
+/**
+ * controller -> ye callback tab execute hota hai jab api pe request aayegi , is type ke functions,fat arrow functions or callbacks ko controoler kehte hai
+ */
+
+authRouter.post("/login", async(req,res) => {
+
+    const { email , password } = req.body
+
+    const user = await userModel.findOne({ email })
+
+    if(!user){
+        return res.status(404).json({
+            message: "User not found with this email address"
+        })
+    }
+
+    const isPasswordMatched = user.password === crypto.createHash("md5").update(password).digest("hex")
+
+    if(!isPasswordMatched) {
+        return res.status(401).json({
+            message: "Invalid password"
+        })
+    }
+
+    const token = jwt.sign({
+        id: user._id,
+    }, process.env.JWT_SECRET)
+
+    res.cookie("jwt_token", token)
+
+    res.status(200).json({
+        message: "user logged in",
+        user
+    })
+})
+
 module.exports = authRouter
+
+
 
 

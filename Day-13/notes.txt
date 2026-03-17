@@ -1,1 +1,18 @@
 Cookies Storage : iske andar jo bhi data hoga , usko server access kar sakta hai, with the help of req.cookies
+
+Login request: Is User ne already register kar liya hai server pe, ab User login request isliye karta hai kyuki usko naya token chahiye(ho sakta hai ki uska token expire kar gaya ho)
+               Login request mein data rehta hai email aur password , aur agar email aur password sahi hai , toh server ek naya token create karta hai, aur woh token de diya jata hai user ko 
+
+Token jabhi create hoga toh uske andar sensitive information nhi rakhenge , like email and password , phone number. Token ke andar usually user ki id hoti hai
+
+Website: MD5 Hash Generator -> kisi bhi word ke liye ek hash generate karta hai 
+         ex: Adarsh ------------------ hashing  ----------> 2c60d1e84d9af49cde19f2096dcb86ff
+
+Hashing ki ek property hoti hai , jismein same string ke liye same hash milta hai , same input -> same o/p
+ek aur property : plain text toh hash mein convert hosakta hai lekin hash -> plain text mein convert nhi hosakta hai
+
+Ab agar humara database breach(leak) hogaya toh email leak hojayega lekin password leak nhi hoga, aur attacker login nhi kar payega kyuki uske pass email hoga lekin password nhi hoga
+
+1. Same input humesha same output generate karega
+2. hash wapas se plain text mein convert nhi ho sakta
+
