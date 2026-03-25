@@ -1,0 +1,24 @@
+bcryptjs : yahi kaam jo pehle register ke time hum password ko hash mein store karte hai . aur wapas login ke time password ko hash mein convert karte hai. Aur agar dono hash barabar hai then we can say that ki , ye wahi password hai jo register ke time use hua hoga.
+           yahi same kaam ko itne low level ka code nhi likhte hai, isi ke liye humare pass ye package hota hai bcryptjs.
+           Crypto hum use kar sakte hai, lekin crypto jo hai woh bahut low level ka package hai, but jab security related advance chije karni hongi tab use hoga bcrypt
+
+Multer Concept
+==============           
+
+app.use(express.json()) -> agar data sirf raw format mein hua toh ye middleware req.body ka data padhke de dega
+but jab data format : form-data aap use karoge tab ek package hai multer uska use karna padega express ko file aur data padhane ke liye            
+
+Multer mein hum memoryStorage ka use karenge kyuki hum server(Disk Storage ke case mein server pe store hota hai) pe file ko store nhi karte hai 
+Aur hum server pe file ko kyu nhi store karte hai? Ans: kyuki server pe store karte hai toh paisa jada lagta hai(you can check aws bandwidth {bandwidth matlab server kitna data share kar raha hai ya mangwa raha hai} pricing)
+isliye hum cloud service providers use karte hai like S3, imageKit, cloudinaryK . kyuki inki pricing kam hoti hai
+
+Memory Storage file ko temporary store karti hai -> User file ko server pe bhejta hai, aur jo ye server hai temporary is file ko store karke rakhega . Aur ye server uske baad is file ko bhej dega Cloud Storage provider ke pass. Aur jaise hi file Cloud Storage provider ke pass pahuch jayegi, Server is file ko apne pass se hata dega.
+
+
+Middleware Concept
+==================
+Repetition of code ka solution hai Middleware. Server ka entry point jo hota hai woh app hota hai, jitni bhi request server pe aati hai , woh isi app ke through aati hai. ye app jo hai woh do jagah request forward kar sakta hai -> ek hai authRouter aur ek hai postRouter 
+postRouter ke andar 3 api hai aur , har api ka ek ek controller hai. aur har controller ke andar hum same code repeat kar rahe hai that is : identifying the user    
+Ab is code ko hum har jagah se hatayenge aur ek aur file banayenge middleware uske andar dalenge.
+
+

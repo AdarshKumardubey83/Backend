@@ -1,5 +1,5 @@
 const userModel = require('../models/user.model')
-const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
@@ -34,9 +34,11 @@ async function loginController(req,res){
         })
     }
 
-    const hash = crypto.createHash('sha256').update(password).digest('hex');
+    /*const hash = crypto.createHash('sha256').update(password).digest('hex');
 
-    const isPasswordValid = hash == user.password
+    const isPasswordValid = hash == user.password */ /*This two line can be converted into one line */
+
+    const isPasswordValid = await bcrypt.compare(password, user.password); /*ye line dono kaam karti hai, pehla jo login ke time password aaya hai usse convert karo hash mein aur then usse comapre karo apne current wale password se */
 
     if(!isPasswordValid){
         return res.status(404).json({
@@ -101,7 +103,7 @@ async function registerController (req,res){
         })
     }
 
-    const hash = crypto.createHash('sha256').update(password).digest('hex')
+    const hash = await bcrypt.hash(password, 10); /*ye jo 10 number hai ye batata hai kitni baar hashing karni hai */
 
     const user = await userModel.create({
         username,
@@ -136,3 +138,7 @@ module.exports = {
     registerController,
     loginController
 }
+
+
+
+
