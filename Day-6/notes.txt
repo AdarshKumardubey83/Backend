@@ -12,11 +12,11 @@
 
 // 3:application server: ye server hota hai jo humare web server aur database server ke beech mein hota hai and ye dono servers ke beech mein communication karwata hai
 
-// toh mongodb ke company hai jo ki dtabses servers ko diffrent diffeent countries pe raki hai and jab apne sabse paas wale location mein data store karte hai taaki serever se jaldi se jaldi data mil sake
+// toh mongodb ke company hai jo ki databses servers ko diffrent diffeent countries pe rakhi hai and jab apne sabse paas wale location mein data store karte hai taaki serever se jaldi se jaldi data mil sake
 
 // what is cluster:combination of storage and processing power(processor)
 // storage: jahan pe hum apna data store karte hai
-// processor:matab huemin cluster mein ek processor milta hai taaki hum apna data jaldi se jaldi process kar sake andf bhej sakein if humara processor slow hai then read and write operation on the datyabse will be slow 
+// processor:matab huemin cluster mein ek processor milta hai taaki hum apna data jaldi se jaldi process kar sake and bhej sakein if humara processor slow hai then read and write operation on the database will be slow 
 // toh cluster mein humare paas multiple processors and multiple storage hote hai taaki hum apna data jaldi se jaldi process kar sakein and read and write operation fast ho jayein
 
 // jab hum mongodb atlas mein new project banatae hai tab puchta hai n craete cluster toh cluster ka matlab hai ki hum apna data kis location pe store karna chahte hai and kis type ke processor chahte hai taaki humara data jaldi se jaldi process ho jayein
@@ -32,7 +32,7 @@
 // mongodb compass:ye ek gui tool hai jo hum use karenge apne mongodb database ko manage karne ke liye
 // mongoose:ye ek library hai jo hum use karenge apne nodejs application se mongodb database ko connect karne ke liye
 
-// dekho datbase jo hai jisse hum data save karenge wo mongodb compass hai 
+// dekho database jo hai jisse hum data save karenge wo mongodb compass hai 
 // and compass jo hai wo data ko check karne ke liye use hota hai ki humara data sahi se save ho raha hai ki nahi
 // and mongoose jo hai wo humare nodejs application ko mongodb database se connect karne ke liye use hota hai
 
