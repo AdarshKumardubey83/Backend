@@ -1,0 +1,21 @@
+React Router Dom package: Alag alag routes pe alag alag ui dikha sakta hai with the help of react router dom.
+                          /login => login form
+                          /register => registration form 
+Command : npm i react-router                           
+
+SCSS ka use karne ke liye react ke saath ek aur package ki jarurat padti hai that is saas.
+
+axios => frontend mein api ko use karne ke liye ek package ki jarurat padti hai that is axios
+command: npm i axios
+
+Backend pe jab register hota hai toh , register api ek cookie set karti hai lekin jab hum axios use karte hai 
+toh woh browser pe set nhi hoti hai , toh uske liye ek aur object pass karna hota hai: 
+withCredentials: true frontend mein
+Aur backend mein app.use(cors()) middleware mein kuch aur chije batani hoti hai warna error aayega
+
+   app.use(cors({
+    credentials: true,  --> true isliye taki backend ka server frontend pe ckies ko setup kar sake
+    origin: "http://localhost:5173"
+}));
+
+origin bhi batana hota hai ki request kaha se aa rahi hai
