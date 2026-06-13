@@ -14,8 +14,34 @@ withCredentials: true frontend mein
 Aur backend mein app.use(cors()) middleware mein kuch aur chije batani hoti hai warna error aayega
 
    app.use(cors({
-    credentials: true,  --> true isliye taki backend ka server frontend pe ckies ko setup kar sake
+    credentials: true,  --> true isliye taki backend ka server frontend pe cookies ko setup kar sake
     origin: "http://localhost:5173"
 }));
 
 origin bhi batana hota hai ki request kaha se aa rahi hai
+
+UI Layer kabhi bhi direct backend se communicate nhi karti hai , isliye Login.jsx aur Register.jsx se backend ke api se communication
+wala code hata denge.
+
+UI Layer ka code jo hota hai woh mainly auth ke andar components aur pages mein hota hai.
+
+auth.api.js(inside services Folder): Is file ke andar pura code hota hai authentication se related saara kam jo backend pe hoga.
+
+Folder Structure of Frontend
+============================
+
+=> UI Layer
+  => UI Dikhana user ko aur navigate karna 
+
+=> Hook Layer
+  => manage karna state and Api layer
+ 
+=> State Layer => storage
+  => state manage
+    => loading 
+    => user
+    => post list
+    => error
+
+=> Api
+  => backend se communicate 
