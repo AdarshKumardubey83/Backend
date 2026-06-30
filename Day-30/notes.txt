@@ -1,0 +1,3 @@
+Agar API successfully chalti toh response hume json format mein milta aur agar api mein kuch error aagaya toh 
+response hume HTML format mein milta hai. 
+Toh problem ye hai ki humne reponse ka type hi change kar diya 
