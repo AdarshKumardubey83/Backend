@@ -1,0 +1,42 @@
+Difference between HTTP and Socket
+
+| HTTP                                                                                 | Socket                                                                              |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| **Request-Response protocol**                                                        | **Continuous two-way communication**                                                |
+| Client sends a request, server sends a response, then communication ends.            | Client and server stay connected and can send data anytime.                         |
+| Stateless (each request is independent).                                             | Stateful (connection remains open).                                                 |
+| Used for REST APIs, web pages, file downloads, etc.                                  | Used for chat apps, multiplayer games, live notifications, live collaboration, etc. |
+| Higher latency for frequent communication because a new request is needed each time. | Lower latency since the connection is already established.                          |
+
+
+HTTP
+
+Client → "Give me user details"
+Server → "Here are the user details"
+Connection ends.
+
+If the client wants data again, it must send another HTTP request.
+
+Socket
+
+Client ↔ Server (Connection stays open)
+
+Client → "Hello"
+Server → "Hi!"
+Server → "New message arrived"
+Client → "Received"
+
+Both client and server can send messages at any time without creating a new request.
+
+When to use?
+HTTP: Login, signup, fetching products, submitting forms, REST APIs.
+Socket: Chat applications, live score updates, online gaming, video calls, collaborative editors (like Google Docs).
+One-line interview answer
+HTTP is a request-response protocol where communication ends after each response.
+Socket provides a persistent, full-duplex connection, allowing t =both client and server to exchange data in real time.
+
+io => server
+socket => single user
+
+on => event ko listen
+emit => event ko fire karna
